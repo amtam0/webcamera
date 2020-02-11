@@ -168,7 +168,8 @@ function processDocument(src, approxCoords) {
   resizeDoc(thresholdedImage);
 
   showingScannedDoc = true;
-  showScannedDoc(thresholdedImage);
+  //showScannedDoc(thresholdedImage);
+  showScannedDoc(warpedImage);
 
   warpedImage.delete(); thresholdedImage.delete();
 }
