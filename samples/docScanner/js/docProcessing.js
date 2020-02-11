@@ -159,9 +159,11 @@ function processDocument(src, approxCoords) {
   // To obtain the black and white feel to the image,
   // we convert warped image to grayscale and apply adaptive thresholding.
   cv.cvtColor(warpedImage, warpedImage, cv.COLOR_BGR2GRAY);
-  cv.adaptiveThreshold(warpedImage, thresholdedImage, 250,
-    cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY,
-    thresholdBlockSize, thresholdOffset);
+  //cv.adaptiveThreshold(warpedImage, thresholdedImage, 250,
+    //cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY,
+    //thresholdBlockSize, thresholdOffset);
+  
+  cv.threshold(warpedImage, thresholdedImage, 128, 255, cv.THRESH_BINARY | cv.THRESH_OTSU);
 
   resizeDoc(thresholdedImage);
 
