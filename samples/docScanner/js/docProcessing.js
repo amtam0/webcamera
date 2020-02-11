@@ -163,7 +163,7 @@ function processDocument(src, approxCoords) {
     //cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY,
     //thresholdBlockSize, thresholdOffset);
   
-  cv.threshold(warpedImage, thresholdedImage, 0, 255, cv.THRESH_BINARY | cv.THRESH_OTSU);
+  cv.threshold(warpedImage, thresholdedImage, 240, 255, cv.THRESH_BINARY | cv.THRESH_OTSU);
 
   resizeDoc(thresholdedImage);
 
